@@ -2,11 +2,11 @@
 % Please edit documentation in R/utils.R
 \name{check_input_data}
 \alias{check_input_data}
-\title{Internal utility: check required columns}
+\title{Internal check: ensure required columns exist}
 \usage{
-check_input_data(data)
+check_input_data(data, need_ah = FALSE, need_odds = FALSE)
 }
 \description{
-Internal utility: check required columns
+Internal check: ensure required columns exist
 }
 \keyword{internal}

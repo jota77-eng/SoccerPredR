@@ -2,10 +2,32 @@
 % Please edit documentation in R/asian_handicap.R
 \name{handicap_distribution}
 \alias{handicap_distribution}
-\title{Asian Handicap distribution (initial skeleton)}
+\title{Historical Asian Handicap distribution}
 \usage{
-handicap_distribution(league, open_line, close_line, data)
+handicap_distribution(league, open_line, close_line, data, tol = 0.05)
+}
+\arguments{
+\item{league}{Character string, league identifier (e.g. "EPL").}
+
+\item{open_line}{Numeric, opening AH line for the home team (e.g. -0.25).}
+
+\item{close_line}{Numeric, closing AH line for the home team.}
+
+\item{data}{Data frame with match information, including columns
+\code{league}, \code{hg}, \code{ag}, \code{ah_open}, \code{ah_close}.}
+
+\item{tol}{Numeric tolerance when matching lines (default 0.05).}
+}
+\value{
+A list with components:
+\describe{
+\item{data}{Subset of matches used in the calculation.}
+\item{summary}{Data frame with outcome, count and empirical probability.}
+\item{n}{Number of matched games.}
+}
 }
 \description{
-Asian Handicap distribution (initial skeleton)
+Given a league and opening / closing Asian handicap lines, this function
+finds historical matches with similar lines and summarizes the empirical
+distribution of betting outcomes (from the home team perspective).
 }
